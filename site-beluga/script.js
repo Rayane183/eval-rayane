@@ -1,0 +1,3 @@
+const cursor=document.querySelector('.cursor');document.addEventListener('mousemove',e=>{cursor.style.left=e.clientX+'px';cursor.style.top=e.clientY+'px'});
+const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.12});document.querySelectorAll('.section,.stats,.sound,.final,.food-grid article,.threat-grid article').forEach(e=>{e.classList.add('reveal');observer.observe(e)});
+const theme=document.getElementById('theme');theme.addEventListener('click',()=>{document.body.classList.toggle('light');theme.textContent=document.body.classList.contains('light')?'☀':'◐'});
